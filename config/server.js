@@ -13,28 +13,23 @@ function start(port) {
     const password = req.body.password
     if (login === process.env.LOGIN && password === process.env.PASSWORD)
       res.status(200).send(responses.auth.valid)
-    else
-      res.status(404).send(responses.auth.incorrect)
+    else res.status(404).send(responses.auth.incorrect)
   })
 
   app.post('/users', function (req, res) {
     res.status(200).send(responses.users.create)
   })
-  
+
   app.delete('/users', function (req, res) {
     const userId = req.body.id
-    if (userId === responses.users.create.id)
-      res.status(200).send(responses.users.delete.existing)
-    else
-      res.status(400).send(responses.users.delete.nonExisting)
+    if (userId === responses.users.create.id) res.status(200).send(responses.users.delete.existing)
+    else res.status(400).send(responses.users.delete.nonExisting)
   })
-  
+
   app.get('/users', function (req, res) {
     const userId = req.query.id
-    if (userId)
-      res.status(200).send({id: userId, amount: 1000})
-    else
-      res.status(200).send(responses.users.get.all)
+    if (userId) res.status(200).send({id: userId, amount: 1000})
+    else res.status(200).send(responses.users.get.all)
   })
 
   app.post('/transactions', function (req, res) {
@@ -49,11 +44,10 @@ function start(port) {
         to,
         amount,
       })
-    else
-      res.status(400).send(responses.transactions.create.invalid)
+    else res.status(400).send(responses.transactions.create.invalid)
   })
 
-  before(function() {
+  before(function () {
     server = app.listen(port)
     console.log(`Mock server is running on port ${port}`)
   })

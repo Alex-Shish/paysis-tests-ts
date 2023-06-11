@@ -118,7 +118,7 @@ describe('Transaction', function () {
       })
 
       it('Create Transaction response body contains error message', function () {
-        expect(createTransactionResponse.body.message).to.eq('Sender doesn\'t have enough money.')
+        expect(createTransactionResponse.body.message).to.eq("Sender doesn't have enough money.")
       })
 
       it("Sender's balance had not decreased", async function () {

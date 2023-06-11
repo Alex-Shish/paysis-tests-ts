@@ -1,0 +1,4 @@
+BASE_URL=https://clientbase-server.herokuapp.com/v4
+PORT=3001
+LOGIN="alice-cooper@gmail.com"
+PASSWORD="123456"
