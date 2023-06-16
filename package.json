@@ -1,5 +1,5 @@
 {
-  "name": "paysis-tests",
+  "name": "paysis-tests-ts",
   "version": "1.0.0",
   "description": "TypeScript + Jest + Axios API tests examples for Paysis project",
   "scripts": {
